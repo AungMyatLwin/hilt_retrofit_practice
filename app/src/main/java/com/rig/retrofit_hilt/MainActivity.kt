@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
       mainViewModel.element.observe(this){
-          Log.d("bodyTest", "onCreate: ${it.body()}")
+          binding.textView.text = it.body()?.title.toString()
       }
 
         binding.button.setOnClickListener{
